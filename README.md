@@ -1,7 +1,7 @@
 
 # NumPyからCuPyへ：高速化の一例
 
-![](../assets/eye_catch.png)
+![](assets/eye_catch.png)
 
 ## はじめに
 
