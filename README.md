@@ -1,21 +1,33 @@
 
-# NumPyからCuPyへ：高速化の一例
+![](https://raw.githubusercontent.com/yKesamaru/cupy/master/assets/eye_catch.png)
 
-![](assets/eye_catch.png)
+- [はじめに](#はじめに)
+- [環境](#環境)
+- [インストール](#インストール)
+- [CuPyについて](#cupyについて)
+  - [NumPyのサンプルコード](#numpyのサンプルコード)
+  - [CuPyによる高速化](#cupyによる高速化)
+  - [性能比較](#性能比較)
+- [CuPyの苦手な処理](#cupyの苦手な処理)
+  - [NumPyのサンプルコード](#numpyのサンプルコード-1)
+  - [CuPyのサンプルコード](#cupyのサンプルコード)
+  - [性能比較](#性能比較-1)
+- [まとめ](#まとめ)
+
 
 ## はじめに
 
-Pythonで数値計算を行う際によく使われるライブラリがNumPyです。しかし、GPUを活用することで計算速度を向上させたい場面も多いでしょう。そこでCuPyが登場します。この記事では、NumPyのコードをCuPyに置き換える一例とその性能比較について解説します。
+Pythonで数値計算を行う際によく使われるライブラリがNumPyです。しかし、GPUを活用することで計算速度を向上させたい場面も多いでしょう。そこでCuPyが登場します。この記事では、NumPyのコードをCuPyに置き換える一例とその性能比較について解説します。一方でCuPyの苦手な処理についても触れますので、使いどころを間違えないようにしましょう。
 
 ![](https://raw.githubusercontent.com/cupy/cupy/main/docs/image/cupy_logo_1000px.png)
 
 ## 環境
 ```bash
- user  user  ~/ドキュメント/cupy  pip install numpy cupy
+$ pip install numpy cupy
 Installing collected packages: fastrlock, numpy, cupy
 Successfully installed cupy-12.2.0 fastrlock-0.8.2 numpy-1.24.4
-(cupy) 
- user  user  ~/ドキュメント/cupy  pip list
+(cupy)
+$ pip list
 Package       Version
 ------------- -------
 cupy          12.2.0
@@ -25,9 +37,9 @@ pip           23.2.1
 pkg_resources 0.0.0
 setuptools    44.0.0
 
- user  user  ~/ドキュメント/cupy  python -V
+$ python -V
 Python 3.8.10
- user  user  ~/ドキュメント/cupy  uname -a
+$ uname -a
 Linux user 5.15.0-83-generic #92~20.04.1-Ubuntu SMP Mon Aug 21 14:00:49 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 
 ```
@@ -99,6 +111,6 @@ CuPyはGPUを活用して高速な数値計算を可能にする強力なライ�
 
 一方で、大量のデータに対する複雑な計算を高速に行う必要がある場合、CuPyは非常に有用です。また、初回のオーバーヘッドを除けば、一般的にはNumPyよりも高速に動作することが多いです。
 
-この記事で紹介した例を通じて、CuPyとNumPyの適切な使い分けや、それぞれの性能特性について理解を深めることができたでしょうか。最終的には、プロジェクトの要件やデータの特性に応じて、最適なライブラリを選ぶことが重要です。
-
 以上がCuPyとNumPyの比較、そしてCuPyの使いどころについての簡単なガイドでした。どちらのライブラリもそれぞれの用途で非常に優れていますので、自分のプロジェクトに最適な選択をしてください。
+
+以上です。ありがとうございました。
